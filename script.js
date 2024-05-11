@@ -138,6 +138,26 @@ function moveShip(e) {
     }
 }
 
+/** Mobile ship movement */
+//moving left
+let x = window.matchMedia("(max-width: 768px)")
+function moveShipLeft() {
+    if (x.matches) {// If media query matches
+        if (ship.x - shipVelocityx >= 0) { //check if ship is moving out of bounds on the left
+            ship.x -= shipVelocityx; //moving the ship left one tile on btn click mobile
+        }
+    }
+}
+
+//moving right
+function moveShipRight() {
+    if (x.matches) {// If media query matches
+        if (ship.x + shipVelocityx + ship.width <= board.width) { //check if ship is moving out of bounds on the right
+            ship.x += shipVelocityx; //moving the ship right one tile on btn click mobile
+        }
+    }
+}
+
 function createAliens() {
     for (let c = 0; c < alienColoumns; c++) {
         for (let r = 0; r < alienRows; r++) {
