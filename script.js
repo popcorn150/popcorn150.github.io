@@ -189,6 +189,20 @@ function shoot(e){
     }
 }
 
+/**Mobile shoot aliens */
+function shootAlien() {
+    if (x.matches) {// If media query matches
+        let bullet = {
+            x: ship.x + shipWidth * 15 / 32,
+            y: ship.y,
+            width: tileSize / 8,
+            height: tileSize / 2,
+            used: false //if bullet hits alien
+        }
+        bulletArray.push(bullet);
+    }
+}
+
 function detectCollision(a, b){
     return a.x < b.x + b.width && //a's top left corner doesn't reach b's top right corner
                 a.x + a.width > b.x && //a's top right corner passes b's top left corner
