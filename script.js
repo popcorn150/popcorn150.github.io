@@ -58,7 +58,7 @@ window.onload = function () {
     };
 
     alienImg = new Image();
-    alienImg.src = "robot-invader.png";
+    alienImg.src = "robot-Invader.png";
     createAliens();
 
     requestAnimationFrame(update);
